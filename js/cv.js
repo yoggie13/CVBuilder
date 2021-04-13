@@ -118,16 +118,6 @@ window.onload = function fillCV() {
     downloadPDF();
 }
 function downloadPDF(){
-    window.jsPDF = window.jspdf.jsPDF; 
-    
-    const doc = new jsPDF();
-
-    doc.html(document);
-    
-    doc.save(`${sessionStorage.getItem("name")} - CV.pdf`);
-
-   /*setTimeout(function(){
-window.close();
-   }, 500);*/
+    window.print()
 
 }
