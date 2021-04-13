@@ -1,5 +1,5 @@
 window.onload = function fillCV() {
-        $("#name").html(sessionStorage.getItem("name"));
+        $("#name").html(sessionStorage.getItem("name").toLocaleUpperCase());
 
         let email = sessionStorage.getItem("email");
         $("#email").html(email);
@@ -115,7 +115,9 @@ window.onload = function fillCV() {
     }else{
         $('#profile_image').attr("src", sessionStorage.getItem("image"));
     }
-    downloadPDF();
+    setTimeout(function(){
+        downloadPDF();
+    }, 500);
 }
 function downloadPDF(){
 
@@ -136,9 +138,9 @@ function downloadPDF(){
             orientation: 'portrait'
         }
     };
-    setTimeout(function(){
-        alert("Download će krenuti uskoro, nemoj refreshovati :)")
-    }, 300);
+    
+    alert("Download će krenuti uskoro, nemoj refreshovati :)")
+ 
     html2pdf().set(opt).from(element).save();
     
 }
