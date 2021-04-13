@@ -51,7 +51,7 @@ function makeCV() {
     }
 
 
-    window.open("CV.html", "_blank");
+    window.open("cv.html", "_blank");
     window.sessionStorage.clear();
 }
 
