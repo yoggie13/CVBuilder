@@ -116,14 +116,6 @@ function addNewFacultyField() {
     ldu.setAttribute('for', `datef${counterF}1`);
     ldu.innerText = "Datum upisa";
 
-    var idz = document.createElement("input");
-    idz.type = "month";
-    idz.id = `datef${counterF}2`;
-
-    var ldz = document.createElement("label");
-    ldz.setAttribute('for', `datef${counterF}2`);
-    ldz.innerText = "Datum upisa";
-
     var ct = document.createElement("input");
     ct.type = "checkbox";
     ct.id = `fakstrenutno${counterF}`;
@@ -131,6 +123,15 @@ function addNewFacultyField() {
     var lt = document.createElement("label");
     lt.setAttribute('for', `fakstrenutno${counterF}`);
     lt.innerText = "Studiram trenutno";
+
+    var idz = document.createElement("input");
+    idz.type = "month";
+    idz.id = `datef${counterF}2`;
+
+    var ldz = document.createElement("label");
+    ldz.setAttribute('for', `datef${counterF}2`);
+    ldz.innerText = "Datum završetka";
+    ldz.id = `datef${counterF}2l`;
 
     var inap = document.createElement("input");
     inap.type = "text";
@@ -151,10 +152,10 @@ function addNewFacultyField() {
     div.appendChild(icou);
     div.appendChild(ldu);
     div.appendChild(idu);
-    div.appendChild(ldz);
-    div.appendChild(idz);
     div.appendChild(lt);
     div.appendChild(ct);
+    div.appendChild(ldz);
+    div.appendChild(idz);
     div.appendChild(lnap);
     div.appendChild(inap);
     div.appendChild(snap);
@@ -162,7 +163,16 @@ function addNewFacultyField() {
     d.appendChild(div);
 
     document.querySelector(`#fakstrenutno${counterF}`).addEventListener('change', function() {
+
         document.getElementById(`datef${counterF}2`).readOnly = !document.getElementById(`datef${counterF}2`).readOnly;
+
+        if (document.getElementById(`datef${counterF}2`).readOnly) {
+            $(`#datef${counterF}2`).css('display', 'none');
+            $(`#datef${counterF}2l`).css('display', 'none');
+        } else {
+            $(`#datef${counterF}2`).css('display', 'flex');
+            $(`#datef${counterF}2l`).css('display', 'flex');
+        }
     });
 }
 
@@ -182,7 +192,23 @@ function addNewLanguageField() {
     li.innerText = `Jezik ${counterL}`;
 
     var s = document.createElement("select");
-    s.options = ["Osnovni nivo", "Srednji nivo", "Napredni nivo", "Maternji jezik"];
+    var o1 = document.createElement("option");
+    o1.value = "Osnovni nivo";
+    o1.innerText = "Osnovni nivo";
+    var o2 = document.createElement("option");
+    o2.value = "Srednji nivo";
+    o2.innerText = "Srednji nivo";
+    var o3 = document.createElement("option");
+    o3.value = "Napredni nivo";
+    o3.innerText = "Napredni nivo";
+    var o4 = document.createElement("option");
+    o4.value = "Maternji jezik";
+    o4.innerText = "Maternji jezik";
+    s.appendChild(o1);
+    s.appendChild(o2);
+    s.appendChild(o3);
+    s.appendChild(o4);
+
     s.id = `level${counterL}`;
 
     var ls = document.createElement("label");
@@ -257,7 +283,7 @@ function addNewJobExperienceField() {
     ip.id = `naziv${counterJ}`;
 
     var lp = document.createElement("label");
-    lp.setAttribute('for', `naziv${counterJ}`);
+    lp.setAttribute('for', ip.id);
     lp.innerText = "Pozicija";
 
     var imef = document.createElement("input");
@@ -265,7 +291,7 @@ function addNewJobExperienceField() {
     imef.type = "text";
 
     var lf = document.createElement("label");
-    lf.setAttribute('for', `firma${counterJ}`);
+    lf.setAttribute('for', imef.id);
     lf.innerText = "Ime firme";
 
     var idp = document.createElement("input");
@@ -273,24 +299,26 @@ function addNewJobExperienceField() {
     idp.id = `date${counterJ}1`;
 
     var ldp = document.createElement("label");
-    ldp.setAttribute('for', `date${counterJ}1`);
+    ldp.setAttribute('for', idp.id);
     ldp.innerText = "Datum početka rada";
-
-    var idz = document.createElement("input");
-    idz.type = "month";
-    idz.id = `date${counterJ}2`;
-
-    var ldz = document.createElement("label");
-    ldz.setAttribute('for', `date${counterJ}2`);
-    ldz.innerText = "Datum završetka rada";
 
     var ct = document.createElement("input");
     ct.type = "checkbox";
     ct.id = `posaotrenutno${counterJ}`;
 
     var lt = document.createElement("label");
-    lt.setAttribute('for', `posaotrenutno${counterJ}`);
+    lt.setAttribute('for', ct.id);
     lt.innerText = "Trenutno radim ovde";
+
+    var idz = document.createElement("input");
+    idz.type = "month";
+    idz.id = `date${counterJ}2`;
+
+    var ldz = document.createElement("label");
+    ldz.setAttribute('for', idz.id);
+    ldz.innerText = "Datum završetka rada";
+    ldz.id = `date${counterJ}2l`;
+
 
     var top = document.createElement("textarea");
     top.id = `opis${counterJ}`;
@@ -310,10 +338,10 @@ function addNewJobExperienceField() {
     div.appendChild(imef);
     div.appendChild(ldp);
     div.appendChild(idp);
-    div.appendChild(ldz)
-    div.appendChild(idz);
     div.appendChild(lt);
     div.appendChild(ct);
+    div.appendChild(ldz)
+    div.appendChild(idz);
     div.appendChild(lop);
     div.appendChild(top);
 
@@ -325,7 +353,16 @@ function addNewJobExperienceField() {
 
 
     document.querySelector(`#posaotrenutno${counterJ}`).addEventListener('change', function() {
+
         document.getElementById(`date${counterJ}2`).readOnly = !document.getElementById(`date${counterJ}2`).readOnly;
+
+        if (document.getElementById(`date${counterJ}2`).readOnly) {
+            $(`#date${counterJ}2`).css('display', 'none');
+            $(`#date${counterJ}2l`).css('display', 'none');
+        } else {
+            $(`#date${counterJ}2`).css('display', 'flex');
+            $(`#date${counterJ}2l`).css('display', 'flex');
+        }
     });
 }
 
@@ -363,6 +400,9 @@ function nextSection() {
     $(`#${sections[sectionCounter]}`).css("visibility", "visible");
     $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
     $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
+
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 function previousSection() {
@@ -378,10 +418,29 @@ function previousSection() {
     $(`#${sections[sectionCounter]}`).css("visibility", "visible");
     $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
     $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
+
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-document.querySelector("#fakstrenutno1").addEventListener('change', function() {
+
+document.querySelector('#fakstrenutno1').addEventListener('change', function() {
     document.getElementById("datef12").readOnly = !document.getElementById("datef12").readOnly;
+    if (document.getElementById(`datef12`).readOnly) {
+        $(`#datef12`).css('display', 'none');
+        $(`#datef12l`).css('display', 'none');
+    } else {
+        $(`#datef12`).css('display', 'flex');
+        $(`#datef12l`).css('display', 'flex');
+    }
 });
-document.querySelector("#posaotrenutno1").addEventListener('change', function() {
+
+document.querySelector('#posaotrenutno1').addEventListener('change', function() {
     document.getElementById("date12").readOnly = !document.getElementById("date12").readOnly;
+    if (document.getElementById("date12").readOnly) {
+        $(`#date12`).css('display', 'none');
+        $(`#date12l`).css('display', 'none');
+    } else {
+        $(`#date12`).css('display', 'flex');
+        $(`#date12l`).css('display', 'flex');
+    }
 });
