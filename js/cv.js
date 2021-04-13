@@ -115,11 +115,19 @@ window.onload = function fillCV() {
     }else{
         $('#profile_image').attr("src", sessionStorage.getItem("image"));
     }
-
-    downloadCV();
+    downloadPDF();
 }
-function downloadCV(){
-    import { jsPDF } from "jspdf";
+function downloadPDF(){
+    window.jsPDF = window.jspdf.jsPDF; 
+    
     const doc = new jsPDF();
-    doc.save("CV.pdf");
+
+    doc.html(document);
+    
+    doc.save(`${sessionStorage.getItem("name")} - CV.pdf`);
+
+   /*setTimeout(function(){
+window.close();
+   }, 500);*/
+
 }

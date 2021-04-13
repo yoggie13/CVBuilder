@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/cv.css">
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="js/cv.js"></script>
     <title>CV</title>
 </head>
 
-<body onload="fillCV()" id="print">
+<body id="print">
     <div id="header">
         <div id="hleft">
             <img id="profile_image" src="">
@@ -72,7 +74,12 @@
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
-<script type="module" src="./js/cv.js"></script>
+<script>
+    /*window.jsPDF = window.jspdf.jsPDF; 
+        setTimeout(function() {
+            const doc = new jsPDF();
+            doc.save("cv.pdf");
+        }, 1000);*/
+</script>
 
 </html>
