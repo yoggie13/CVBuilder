@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="https://kit.fontawesome.com/1c23f89a0d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form id="form">
+        <div id="general_info">
+            <h2>Osnovne info</h2>
+            <div id="generalinfoinput">
+                <label for="nameform">Ime</label>
+                <input type="text" id="nameform" value="Ognjen Nikolić">
+                <label for="emailform">E-mail</label>
+                <input type="email" id="emailform" value="ognjennikolic13@gmail.com">
+                <small>Unesi privatni mejl koji koristiš</small>
+                <br>
+                <label for="phoneform">Telefon</label>
+                <input type="text" id="phoneform" value="066415277">
+                <label for="linkedInform">LinkedIn</label>
+                <input type="url" id="linkedInform" value="https://www.linkedin.com/in/ognjennikolic13">
+                <label for="dateofbirthform">Datum rođenja</label>
+                <input type="date" id="dateofbirthform" value="1998-11-08">
+                <label for="addressform">Adresa</label>
+                <input type="text" id="addressform" value="Raše Plaovića 6/9, Beograd">
+                <label for="image">Slika</label>
+                <input type="file" id="image" accept="image/*">
+                <small>Najbolje bi bilo da bude slika do grudi, slikano od napred, sa jednobojnom pozadinom. Svakako bilo koja slika koja te najbolje opisuje može.</small>
+            </div>
+            <div id="buttons">
+                <button id="next_section" onclick="nextSection()"><i class="fas fa-chevron-right fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="education">
+            <h2>Obrazovanje</h2>
+            <div id="educationinput">
+                <h3>Srednja škola</h3>
+                <div>
+                    <label for="middleform">Naziv srednje škole</label>
+                    <input type="text" id="middleform" value="Peta beogradska gimnazija">
+                    <label for="datem1">Datum upisa</label>
+                    <input type="month" id="datem1" value="2013-09">
+                    <label for="datem2">Datum završetka</label>
+                    <input type="month" id="datem2" value="2017-05">
+                    <label for="middlenapomenaform">Napomena</label>
+                    <input type="text" id="middlenapomenaform" value="Vukova diploma, predsednik parlamenta">
+                    <small>Mesto na nekom takmičenju, diploma, članstvo u nekoj sekciji...</small>
+                </div>
+                <h3>Fakultet</h3>
+                <div>
+                    <label for="facultyform1">Naziv fakulteta</label>
+                    <input type="text" id="facultyform1" value="Fakultet organizacionih nauka">
+                    <label for="courseform1">Smer</label>
+                    <input type="text" id="courseform1" value="Informacioni sistemi i tehnologije">
+                    <label for="datef11">Datum upisa</label>
+                    <input type="month" id="datef11" value="2017-10">
+                    <label for="fakstrenutno1">Trenutno studiram</label>
+                    <input type="checkbox" id="fakstrenutno1">
+                    <label for="datef12">Datum završetka</label>
+                    <input type="month" id="datef12">
+                    <label for="facultynapomenaform1">Napomena</label>
+                    <input type="text" id="facultynapomenaform1" value="Prosek: 9.18">
+                    <small>Prosek, učešće u nekom projektu fakulteta...</small>
+                </div>
+            </div>
+            <div id="buttons">
+                <button id="previous_section" onclick="previousSection()"><i class="fas fa-chevron-left"></i></button>
+                <button id="facultyb" onclick="addNewFacultyField()"><i class="fas fa-plus fa-lg"></i></button>
+                <button id="next_section" onclick="nextSection()"><i class="fas fa-chevron-right fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="work">
+            <h2>Radno iskustvo</h2>
+            <div id="workinput">
+                <div>
+                    <label for="naziv1">Pozicija</label>
+                    <input type="text" id="naziv1" value="Project manager of Open IT 15">
+                    <label for="firma1">Ime firme</label>
+                    <input type="text" id="firma1" value="AIESEC Serbia">
+                    <label for="date11">Datum početka rada</label>
+                    <input type="month" id="date11">
+                    <label for="posaotrenutno1">Trenutno radim tu</label>
+                    <label for="date12">Datum završetka rada</label>
+                    <input type="checkbox" id="posaotrenutno1">
+                    <input type="month" id="date12">
+                    <label for="opis1">Opis posla</label>
+                    <textarea id="opis1" cols="40" rows="6">bla
+                    bla
+                    blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</textarea>
+                </div>
+            </div>
+            <div id="buttons">
+                <button id="previous_section" onclick="previousSection()"><i class="fas fa-chevron-left"></i></button>
+                <button id="workb" onclick="addNewJobExperienceField()"><i class="fas fa-plus fa-lg"></i></button>
+                <button id="next_section" onclick="nextSection()"><i class="fas fa-chevron-right fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="languages">
+            <h2>Jezici</h2>
+            <div id="lanugagesinput">
+                <div>
+                    <label for="lanugage1">Jezik 1</label>
+                    <input type="text" id="language1">
+                    <label for="level1">Nivo znanja</label>
+                    <select id="level1">
+                        <option>Osnovni nivo</option>
+                        <option>Srednji nivo</option>
+                        <option>Napredni nivo</option>
+                        <option>Maternji jezik</option>
+                    </select>
+                </div>
+            </div>
+            <div id="buttons">
+                <button id="previous_section" onclick="previousSection()"><i class="fas fa-chevron-left"></i></button>
+                <button id="languagesb" onclick="addNewLanguageField()"><i class="fas fa-plus fa-lg"></i></button>
+                <button id="next_section" onclick="nextSection()"><i class="fas fa-chevron-right fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="skills">
+            <h2>Veštine</h2>
+            <div id="skillsinput">
+                <div>
+                    <label for="skill1">Veština 1</label>
+                    <input type="text" id="skill1">
+                </div>
+            </div>
+            <div id="buttons">
+                <button id="previous_section" onclick="previousSection()"><i class="fas fa-chevron-left"></i></button>
+                <button id="skillsb" onclick="addNewSkillsField()"><i class="fas fa-plus fa-lg"></i></button>
+                <button id="next_section" onclick="nextSection()"><i class="fas fa-chevron-right fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="hobbies">
+            <h2>Hobi</h2>
+            <div id="hobbiesinput">
+                <div>
+                    <label for="hobby1">Hobi 1</label>
+                    <input type="text" id="hobby1">
+                </div>
+            </div>
+            <div id="buttons">
+                <button id="previous_section" onclick="previousSection()"><i class="fas fa-chevron-left"></i></button>
+                <button id="hobbiesb" onclick="addNewHobbyField()"><i class="fas fa-plus fa-lg"></i></button>
+                <button id="next_section" onclick="nextSection()"><i class="fas fa-chevron-right fa-lg"></i></button>
+            </div>
+        </div>
+        <div id="save_cv">
+            <button id="previous_section" onclick="previousSection()"><i class="fas fa-chevron-left fa-3x"></i></button>
+            <button id="save" onclick="makeCV()"><i class="far fa-file-pdf fa-3x"></i></button>
+        </div>
+    </form>
+</body>
+<script src="js/form.js"></script>
+
+</html>

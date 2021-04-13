@@ -1,0 +1,149 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Ethnocentric';
+    font-weight: bold;
+    color: #111111;
+}
+
+small,
+label,
+input,
+select,
+option {
+    font-family: 'Lato';
+}
+
+input,
+select {
+    border-radius: 5px;
+    border: solid 1px gray;
+    padding: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+small {
+    font-style: italic;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+}
+
+#form {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#form div {
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+small {
+    margin-bottom: 10px;
+}
+
+#general_info {
+    grid-column: 2;
+    width: inherit;
+    height: 100%;
+}
+
+#education,
+#work,
+#languages,
+#hobbies,
+#skills,
+#save_cv {
+    visibility: hidden;
+    grid-column: 3;
+    width: inherit;
+    height: 100%;
+}
+
+textarea {
+    overflow-y: scroll;
+    resize: none;
+}
+
+button {
+    background: none;
+    border: solid 1px gray;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+#save_cv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+#save_cv button {
+    width: 100px;
+    height: 100px;
+}
+
+#facultyb,
+#workb,
+#languagesb,
+#hobbiesb,
+#skillsb {
+    flex: 0 1 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#next_section {
+    flex: 0 1 auto;
+    margin-left: auto;
+}

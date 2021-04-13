@@ -1,0 +1,140 @@
+body {
+    width: 21cm;
+    height: 29.7cm;
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+p,
+h1,
+h3,
+h4,
+h5 {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    overflow-wrap: break-word;
+}
+
+h2 {
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-family: "Ethnocentric";
+}
+
+p,
+li {
+    font-family: "Lato";
+    font-weight: normal;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Lato";
+    font-weight: bold;
+    color: #152238;
+}
+
+h4,
+h5,
+#middlenapomena,
+#facultynapomena {
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 20px;
+}
+
+#header {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: #00224b;
+}
+
+#header h1,
+#header p {
+    color: white;
+}
+
+#header h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+img {
+    margin: 10px;
+}
+
+#hleft {
+    grid-column: 1;
+}
+
+#hright {
+    grid-column: 2;
+}
+
+#bodycenter {
+    display: grid;
+    grid-row: 2;
+    grid-template-columns: 40% 60%;
+    max-width: 21cm;
+}
+
+div #left {
+    grid-column: 1;
+    border-right: black solid 1px;
+    width: 100%;
+}
+
+#right {
+    width: 100%;
+}
+
+#work {
+    width: 100%;
+}
+
+#language-list {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#lang {
+    grid-column: 1;
+}
+
+#grade {
+    grid-column: 2;
+}
+
+div #right {
+    grid-column: 2;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+#watermark {
+    width: 100px;
+    height: 100px;
+    top: 88%;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
