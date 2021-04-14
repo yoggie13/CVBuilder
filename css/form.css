@@ -6,6 +6,7 @@ html {
 
 body {
     background-color: #FAFAFA;
+    font-family: Lato;
 }
 
 h1,
@@ -77,12 +78,13 @@ small {
     margin-bottom: 10px;
 }
 
-#general_info {
+#uputstvo {
     grid-column: 2;
     width: inherit;
     height: 100%;
 }
 
+#general_info,
 #education,
 #work,
 #languages,

@@ -379,6 +379,7 @@ document.querySelector("#image").addEventListener("change", function() {
 
 var sectionCounter = 0;
 const sections = [
+    'uputstvo',
     'general_info',
     'education',
     'work',
