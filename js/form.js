@@ -439,7 +439,7 @@ function nextSection() {
 
         $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
         $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
-        $(`#${sections[sectionCounter]}`).css("animation", "slideinLeft .3s ease-in");
+        $(`#${sections[sectionCounter]}`).css("animation", "slideinLeft .1s ease-in");
 
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -499,8 +499,8 @@ function fixOpis(opis) {
 }
 window.addEventListener("keydown", function(event) {
 
-    if (event.key == "ArrowLeft")
+    if (event.key == "ArrowLeft" && sectionCounter > 0)
         previousSection();
-    else if (event.key == "ArrowRight")
+    else if (event.key == "ArrowRight" && sectionCounter < sections.length - 1)
         nextSection();
 });

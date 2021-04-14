@@ -2,11 +2,20 @@
 html {
     width: 100%;
     height: 100%;
+    background: url(../src/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
-    background-color: #37c6ff;
     font-family: Lato;
+    color: #fafafa;
+}
+
+i {
+    color: #fafafa;
 }
 
 h1,
@@ -14,7 +23,7 @@ h2,
 h3,
 h4 {
     font-family: 'Montserrat';
-    color: #111111;
+    color: #cc01f5;
 }
 
 h2 {
@@ -132,7 +141,7 @@ textarea {
 
 button {
     background: none;
-    border: solid 1px gray;
+    border: solid 1px #fafafa;
     border-radius: 50%;
     width: 50px;
     height: 50px;
