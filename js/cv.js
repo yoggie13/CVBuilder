@@ -39,20 +39,38 @@ window.onload = function fillCV() {
             $("#address").remove();
         }
 
+        if (sessionStorage.getItem("middle") != null && sessionStorage.getItem("middle") != "") {
+
+            document.getElementById('school').innerHTML += "<h3 id='middle'></h3><h5 id = 'moddo'></h5><p id ='middlenapomena'></p>";
+
+            $("#middle").html(sessionStorage.getItem("middle"));
+            let middlenapomena = sessionStorage.getItem("middlenapomena");
+            if (middlenapomena != null && middlenapomena != "") {
+                $("#middlenapomena").html(middlenapomena);
+            } else {
+                $("#middlenapomena").remove();
+            }
+            if (sessionStorage.getItem("datem") != null && sessionStorage.getItem("datem") != "" && !sessionStorage.getItem("datem").includes("undefined")) {
+                $("#moddo").html(sessionStorage.getItem("datem"));
+            }
+        }
+
         for (let i = 1; i < 4; i++) {
 
             if (sessionStorage.getItem(`faculty${i}`) == null || sessionStorage.getItem(`faculty${i}`) == "") break;
 
 
             document.getElementById('school').innerHTML += `<div id="faks${i}">
-        <h3 id="faculty${i}"></h3>
-        <h4 id="course${i}"></h4>
-        <h5 id="foddo${i}"></h5>
-        <p id="facultynapomena${i}"></p>
-    </div>`;
+            <h3 id="faculty${i}"></h3>
+            <h4 id="course${i}"></h4>
+            <h5 id="foddo${i}"></h5>
+            <p id="facultynapomena${i}"></p>
+            </div>`;
 
             $(`#faculty${i}`).html(sessionStorage.getItem(`faculty${i}`));
-            $(`#foddo${i}`).html(sessionStorage.getItem(`datef${i}`))
+            if (sessionStorage.getIem(`datef${i}`) != null && sessionStorage.getItem(`datem`) != "" && sessionStorage.getItem("datem").includes("undefined")) {
+                $(`#foddo${i}`).html(sessionStorage.getItem(`datef${i}`))
+            }
             $(`#course${i}`).html(sessionStorage.getItem(`course${i}`));
             let facultynapomena = sessionStorage.getItem(`facultynapomena${i}`);
             if (facultynapomena != null && facultynapomena != "") {
@@ -62,15 +80,8 @@ window.onload = function fillCV() {
             }
         }
 
-        $("#middle").html(sessionStorage.getItem("middle"));
-        let middlenapomena = sessionStorage.getItem("middlenapomena");
-        if (middlenapomena != null && middlenapomena != "") {
-            $("#middlenapomena").html(middlenapomena);
-        } else {
-            $("#middlenapomena").remove();
-        }
-
-        $("#moddo").html(sessionStorage.getItem("datem"));
+        if (document.getElementById("middle") == null && document.getElementById("faculty1") == null && document.getElementById("faculty2") == null)
+            $("#school").remove();
 
         for (let i = 1; i < 10; i++) {
             if (sessionStorage.getItem(`naziv${i}`) == null) {
