@@ -57,6 +57,7 @@ textarea {
 }
 
 #form {
+    width: 100%;
     display: grid;
     grid-template-columns: 20% 60% 20%;
     justify-content: center;
@@ -88,7 +89,7 @@ small {
 #hobbies,
 #skills,
 #save_cv {
-    visibility: hidden;
+    display: none;
     grid-column: 3;
     width: inherit;
     height: 100%;
@@ -117,7 +118,6 @@ button {
 
 #save_cv {
     width: 100%;
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     position: relative;

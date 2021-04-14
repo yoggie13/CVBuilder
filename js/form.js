@@ -349,7 +349,7 @@ function addNewJobExperienceField() {
     d.appendChild(div);
 
     if (counterJ == 4) {
-        $("#workb").css("visibility", "hidden");
+        $("#workb").css("display", "none");
     }
 
 
@@ -391,14 +391,18 @@ const sections = [
 function nextSection() {
     event.preventDefault();
 
-    $(`#${sections[sectionCounter]}`).css("visibility", "hidden");
+    $(`#${sections[sectionCounter]}`).css("display", "none");
     $(`#${sections[sectionCounter]}`).css("grid-column", "1");
     $(`#${sections[sectionCounter]}`).css(`grid-row","${sectionCounter+1}`);
 
 
     sectionCounter++;
 
-    $(`#${sections[sectionCounter]}`).css("visibility", "visible");
+    if (sectionCounter != sections.length - 1)
+        $(`#${sections[sectionCounter]}`).css("display", "block");
+    else
+        $(`#${sections[sectionCounter]}`).css("display", "flex");
+
     $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
     $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
 
@@ -409,14 +413,14 @@ function nextSection() {
 function previousSection() {
     event.preventDefault();
 
-    $(`#${sections[sectionCounter]}`).css("visibility", "hidden");
+    $(`#${sections[sectionCounter]}`).css("display", "none");
     $(`#${sections[sectionCounter]}`).css("grid-column", "3");
     $(`#${sections[sectionCounter]}`).css(`grid-row","${sectionCounter-1}`);
 
 
     sectionCounter--;
 
-    $(`#${sections[sectionCounter]}`).css("visibility", "visible");
+    $(`#${sections[sectionCounter]}`).css("display", "block");
     $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
     $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
 
