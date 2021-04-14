@@ -186,7 +186,7 @@ button {
 
 @keyframes slideinLeft {
     0% {
-        transform: skewX(-20deg) translateX(100vw);
+        transform: skewX(20deg) translateX(100vw);
     }
     100% {
         transform: skewX(0deg);
@@ -204,7 +204,7 @@ button {
 
 @keyframes slideinRight {
     0% {
-        transform: skewX(20deg) translateX(-100vw);
+        transform: skewX(-20deg) translateX(-100vw);
     }
     100% {
         transform: skewX(0deg);

@@ -424,12 +424,13 @@ const sections = [
 function nextSection() {
     event.preventDefault();
 
-    $(`#${sections[sectionCounter]}`).css("animation", "slideoutLeft .2s ease-in");
+    $(`#${sections[sectionCounter]}`).css("animation", "slideoutLeft .2s ease-out");
 
     setTimeout(function() {
         $(`#${sections[sectionCounter]}`).css("display", "none");
         $(`#${sections[sectionCounter]}`).css("grid-column", "1");
-        $(`#${sections[sectionCounter]}`).css("grid-row", "${sectionCounter+1}");
+        $(`#${sections[sectionCounter]}`).css("grid-row", `${sectionCounter+1}`);
+
         sectionCounter++;
 
         if (sectionCounter != sections.length - 1)
@@ -439,7 +440,7 @@ function nextSection() {
 
         $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
         $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
-        $(`#${sections[sectionCounter]}`).css("animation", "slideinLeft .1s ease-in");
+        $(`#${sections[sectionCounter]}`).css("animation", "slideinLeft .2s ease-in");
 
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -452,7 +453,7 @@ function nextSection() {
 function previousSection() {
     event.preventDefault();
 
-    $(`#${sections[sectionCounter]}`).css("animation", "slideoutRight .2s ease-in");
+    $(`#${sections[sectionCounter]}`).css("animation", "slideoutRight .2s ease-out");
 
     setTimeout(function() {
 
