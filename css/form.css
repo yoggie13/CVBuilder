@@ -68,10 +68,16 @@ body {
     margin: auto;
 }
 
-input,
-select,
-textarea {
+input {
+    width: calc(100% - 22px);
+}
+
+select {
     width: 100%;
+}
+
+textarea {
+    width: calc(100% - 6px);
 }
 
 #form {

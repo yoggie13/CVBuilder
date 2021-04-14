@@ -35,7 +35,7 @@ function makeCV() {
             sessionStorage.setItem(`datum${i}`, getDate(document.getElementById(`date${i}1`).value) + " - " + getDate(document.getElementById(`date${i}2`).value));
         }
 
-        sessionStorage.setItem(`opis${i}`, fixOpis(document.getElementById(`opis${i}`).value));
+        sessionStorage.setItem(`opis${i}`, document.getElementById(`opis${i}`).value);
     }
 
     for (let i = 1; i < 15; i++) {
@@ -365,6 +365,9 @@ function addNewJobExperienceField() {
     lop.setAttribute('for', top.id);
     lop.innerText = "Opis posla";
 
+    var sop = document.createElement("small");
+    sop.innerText = "Najbolje bi bilo da ti opis bude 2-3 rečenice ili 4-5 bullet point-ova +" +
+        "(samo stavi entere mi ćemo odraditi ostalo). Istakni šta je to konkretno što si radio/la, neki rezultat ako je postignut i možeš neka glavna učenja";
 
     var div = document.createElement("div");
 
@@ -377,6 +380,7 @@ function addNewJobExperienceField() {
     div.appendChild(divdatum);
     div.appendChild(lop);
     div.appendChild(top);
+    div.appendChild(sop);
 
     d.appendChild(div);
 
@@ -491,9 +495,7 @@ document.querySelector('#posaotrenutno1').addEventListener('change', function() 
     }
 });
 
-function fixOpis(opis) {
-    return opis.replaceAll("\n", "<br>");
-}
+
 window.addEventListener("keydown", function(event) {
 
     if (event.key == "ArrowLeft" && sectionCounter > 0)

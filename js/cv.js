@@ -98,7 +98,7 @@ window.onload = function fillCV() {
             $(`#nazivcv${i}`).html(sessionStorage.getItem(`naziv${i}`));
             $(`#firmacv${i}`).html(sessionStorage.getItem(`firma${i}`));
             $(`#datumcv${i}`).html(sessionStorage.getItem(`datum${i}`));
-            $(`#opiscv${i}`).html(sessionStorage.getItem(`opis${i}`));
+            fixOpis(i);
         }
         for (let i = 1; i < 15; i++) {
             if (sessionStorage.getItem(`language${i}`) == null) {
@@ -162,8 +162,22 @@ function downloadPDF(){
         }
     };
     
-    alert("Download će krenuti uskoro, nemoj refreshovati :)")
+    /*alert("Download će krenuti uskoro, nemoj refreshovati :)")
  
-    html2pdf().set(opt).from(element).save();
+    html2pdf().set(opt).from(element).save();*/
     
+}
+function fixOpis(i) {
+    var opis =sessionStorage.getItem(`opis${i}`);
+    if(opis.includes('\n')){
+        bulleti = opis.split('\n');
+        listOpis = "<ul id='opisbullet'>";
+        for(let j = 0; j < bulleti.length; j++){
+            listOpis += "<li>"+bulleti[j]+"</li>";
+        }
+        listOpis+="</ul>"
+        $(`#opiscv${i}`).html(listOpis);
+    }
+    else
+    $(`#opiscv${i}`).html(opis);
 }

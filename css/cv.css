@@ -152,3 +152,7 @@ img {
     margin-left: 20px;
     position: absolute;
 }
+
+#opisbullet {
+    list-style-type: disc;
+}
