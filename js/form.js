@@ -117,22 +117,36 @@ function addNewFacultyField() {
     ldu.setAttribute('for', `datef${counterF}1`);
     ldu.innerText = "Datum upisa";
 
+    var idz = document.createElement("input");
+    idz.type = "month";
+    idz.id = `datef${counterF}2`;
+    idz.setAttribute("style", "display: block");
+
+    var ldz = document.createElement("label");
+    ldz.innerText = "Datum završetka";
+    ldz.setAttribute('for', idz.id);
+    ldz.id = `datef${counterF}2l`;
+    ldz.setAttribute("style", "display: block");
+
+    var divdatum = document.createElement("div");
+
+    var divcheck = document.createElement("div");
+    divcheck.id = "check";
+
     var ct = document.createElement("input");
     ct.type = "checkbox";
     ct.id = `fakstrenutno${counterF}`;
 
     var lt = document.createElement("label");
     lt.setAttribute('for', `fakstrenutno${counterF}`);
-    lt.innerText = "Studiram trenutno";
+    lt.innerText = "Trenutno studiram";
 
-    var idz = document.createElement("input");
-    idz.type = "month";
-    idz.id = `datef${counterF}2`;
+    divcheck.appendChild(lt);
+    divcheck.appendChild(ct);
 
-    var ldz = document.createElement("label");
-    ldz.setAttribute('for', `datef${counterF}2`);
-    ldz.innerText = "Datum završetka";
-    ldz.id = `datef${counterF}2l`;
+    divdatum.appendChild(divcheck);
+    divdatum.appendChild(ldz);
+    divdatum.appendChild(idz);
 
     var inap = document.createElement("input");
     inap.type = "text";
@@ -153,10 +167,7 @@ function addNewFacultyField() {
     div.appendChild(icou);
     div.appendChild(ldu);
     div.appendChild(idu);
-    div.appendChild(lt);
-    div.appendChild(ct);
-    div.appendChild(ldz);
-    div.appendChild(idz);
+    div.appendChild(divdatum);
     div.appendChild(lnap);
     div.appendChild(inap);
     div.appendChild(snap);
@@ -171,8 +182,8 @@ function addNewFacultyField() {
             $(`#datef${counterF}2`).css('display', 'none');
             $(`#datef${counterF}2l`).css('display', 'none');
         } else {
-            $(`#datef${counterF}2`).css('display', 'flex');
-            $(`#datef${counterF}2l`).css('display', 'flex');
+            $(`#datef${counterF}2`).css('display', 'block');
+            $(`#datef${counterF}2l`).css('display', 'block');
         }
     });
 }
@@ -314,11 +325,34 @@ function addNewJobExperienceField() {
     var idz = document.createElement("input");
     idz.type = "month";
     idz.id = `date${counterJ}2`;
+    idz.setAttribute("style", "display: block");
 
     var ldz = document.createElement("label");
-    ldz.setAttribute('for', idz.id);
     ldz.innerText = "Datum završetka rada";
     ldz.id = `date${counterJ}2l`;
+    ldz.setAttribute("style", "display: block");
+
+    var divdatum = document.createElement("div");
+
+    divdatum.appendChild(document.createElement("br"));
+
+    var divcheck = document.createElement("div");
+    divcheck.id = "check";
+
+    var ct = document.createElement("input");
+    ct.type = "checkbox";
+    ct.id = `posaotrenutno${counterJ}`;
+
+    var lt = document.createElement("label");
+    lt.setAttribute('for', `posaotrenutno${counterJ}`);
+    lt.innerText = "Trenutno radim tu";
+
+    divcheck.appendChild(lt);
+    divcheck.appendChild(ct);
+
+    divdatum.appendChild(divcheck);
+    divdatum.appendChild(ldz);
+    divdatum.appendChild(idz);
 
 
     var top = document.createElement("textarea");
@@ -339,10 +373,7 @@ function addNewJobExperienceField() {
     div.appendChild(imef);
     div.appendChild(ldp);
     div.appendChild(idp);
-    div.appendChild(lt);
-    div.appendChild(ct);
-    div.appendChild(ldz)
-    div.appendChild(idz);
+    div.appendChild(divdatum);
     div.appendChild(lop);
     div.appendChild(top);
 
@@ -361,8 +392,8 @@ function addNewJobExperienceField() {
             $(`#date${counterJ}2`).css('display', 'none');
             $(`#date${counterJ}2l`).css('display', 'none');
         } else {
-            $(`#date${counterJ}2`).css('display', 'flex');
-            $(`#date${counterJ}2l`).css('display', 'flex');
+            $(`#date${counterJ}2`).css('display', 'block');
+            $(`#date${counterJ}2l`).css('display', 'block');
         }
     });
 }
@@ -392,23 +423,29 @@ const sections = [
 function nextSection() {
     event.preventDefault();
 
-    $(`#${sections[sectionCounter]}`).css("display", "none");
-    $(`#${sections[sectionCounter]}`).css("grid-column", "1");
-    $(`#${sections[sectionCounter]}`).css(`grid-row","${sectionCounter+1}`);
+    $(`#${sections[sectionCounter]}`).css("animation", "slideoutLeft .2s ease-in");
+
+    setTimeout(function() {
+        $(`#${sections[sectionCounter]}`).css("display", "none");
+        $(`#${sections[sectionCounter]}`).css("grid-column", "1");
+        $(`#${sections[sectionCounter]}`).css("grid-row", "${sectionCounter+1}");
+        sectionCounter++;
+
+        if (sectionCounter != sections.length - 1)
+            $(`#${sections[sectionCounter]}`).css("display", "block");
+        else
+            $(`#${sections[sectionCounter]}`).css("display", "flex");
+
+        $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
+        $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
+        $(`#${sections[sectionCounter]}`).css("animation", "slideinLeft .3s ease-in");
+
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }, 100);
 
 
-    sectionCounter++;
 
-    if (sectionCounter != sections.length - 1)
-        $(`#${sections[sectionCounter]}`).css("display", "block");
-    else
-        $(`#${sections[sectionCounter]}`).css("display", "flex");
-
-    $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
-    $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
-
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 function previousSection() {
@@ -435,8 +472,8 @@ document.querySelector('#fakstrenutno1').addEventListener('change', function() {
         $(`#datef12`).css('display', 'none');
         $(`#datef12l`).css('display', 'none');
     } else {
-        $(`#datef12`).css('display', 'flex');
-        $(`#datef12l`).css('display', 'flex');
+        $(`#datef12`).css('display', 'block');
+        $(`#datef12l`).css('display', 'block');
     }
 });
 
@@ -446,8 +483,8 @@ document.querySelector('#posaotrenutno1').addEventListener('change', function() 
         $(`#date12`).css('display', 'none');
         $(`#date12l`).css('display', 'none');
     } else {
-        $(`#date12`).css('display', 'flex');
-        $(`#date12l`).css('display', 'flex');
+        $(`#date12`).css('display', 'block');
+        $(`#date12l`).css('display', 'block');
     }
 });
 

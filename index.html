@@ -39,6 +39,7 @@
                 <input type="email" id="emailform">
                 <small>Unesi privatni mejl koji koristiš (savetujemo da bude neki imeprezime, i.prezime ime.prezimebroj ili nešto slično ovim kombinacijama)</small>
                 <br>
+                <br>
                 <label for="phoneform">Telefon</label>
                 <input type="text" id="phoneform">
                 <label for="linkedInform">LinkedIn</label>
@@ -78,10 +79,15 @@
                     <input type="text" id="courseform1">
                     <label for="datef11">Datum upisa</label>
                     <input type="month" id="datef11">
-                    <label for="fakstrenutno1">Trenutno studiram</label>
-                    <input type="checkbox" id="fakstrenutno1">
-                    <label for="datef12" id="datef12l">Datum završetka</label>
-                    <input type="month" id="datef12">
+                    <div>
+                        <br>
+                        <div id="check">
+                            <label for="fakstrenutno1">Trenutno studiram</label>
+                            <input type="checkbox" id="fakstrenutno1">
+                        </div>
+                        <label id="datef12l" for="datef12" style="display: block;">Datum završetka</label>
+                        <input type="month" id="datef12" style="display: block;">
+                    </div>
                     <label for="facultynapomenaform1">Napomena</label>
                     <input type="text" id="facultynapomenaform1">
                     <small>Prosek, učešće u nekom projektu fakulteta...</small>
@@ -95,6 +101,7 @@
         </div>
         <div id="work">
             <h2>Radno iskustvo</h2>
+            <small>Ukoliko nemaš iskustvo rada u firmi, stavi iskustvo iz neke studentkse organizacije, volontiranje ili nešto sl.</small>
             <div id="workinput">
                 <div>
                     <label for="naziv1">Pozicija</label>
@@ -103,10 +110,14 @@
                     <input type="text" id="firma1">
                     <label for="date11">Datum početka rada</label>
                     <input type="month" id="date11">
-                    <label for="posaotrenutno1">Trenutno radim tu</label>
-                    <input type="checkbox" id="posaotrenutno1">
-                    <label for="date12" id="date12l">Datum završetka rada</label>
-                    <input type="month" id="date12">
+                    <div>
+                        <div id="check">
+                            <label for="posaotrenutno1">Trenutno radim tu</label>
+                            <input type="checkbox" id="posaotrenutno1">
+                        </div>
+                        <label for="date12" id="date12l" for="date12" style="display: block;">Datum završetka rada</label>
+                        <input type="month" id="date12" style="display: block;">
+                    </div>
                     <label for="opis1">Opis posla</label>
                     <textarea id="opis1" cols="40" rows="6"></textarea>
                 </div>
@@ -151,6 +162,7 @@
         </div>
         <div id="skills">
             <h2>Veštine</h2>
+            <small>Stavi sve što smatraš da je bitno - od programskih jezika do veštine rada u timu</small>
             <div id="skillsinput">
                 <div>
                     <label for="skill1">Veština 1</label>
@@ -161,7 +173,7 @@
                     <input type="text" id="skill2">
                 </div>
                 <div>
-                    <label for="skill3">Veština 1</label>
+                    <label for="skill3">Veština 3</label>
                     <input type="text" id="skill3">
                 </div>
             </div>
@@ -173,6 +185,7 @@
         </div>
         <div id="hobbies">
             <h2>Hobi</h2>
+            <small>Predlažemo da staviš neke hobije, jer često umeju da budu dobar ice-breaker, kao i da se izvuku veštine koje ljudi poseduju upravo iz njih</small>
             <div id="hobbiesinput">
                 <div>
                     <label for="hobby1">Hobi 1</label>

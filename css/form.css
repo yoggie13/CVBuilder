@@ -17,6 +17,10 @@ h4 {
     color: #111111;
 }
 
+h2 {
+    margin-bottom: 5px;
+}
+
 small,
 label,
 input,
@@ -75,13 +79,15 @@ textarea {
 }
 
 small {
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 #uputstvo {
     grid-column: 2;
     width: inherit;
     height: 100%;
+    animation: slideinLeft .3s ease-in;
 }
 
 #general_info,
@@ -97,9 +103,30 @@ small {
     height: 100%;
 }
 
+#check {
+    display: inline;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#check label {
+    display: inline-block;
+}
+
+#check input {
+    width: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
 textarea {
     overflow-y: scroll;
     resize: none;
+    margin-top: 10px;
+    border-radius: 10px;
 }
 
 button {
@@ -145,4 +172,22 @@ button {
 #next_section {
     flex: 0 1 auto;
     margin-left: auto;
+}
+
+@keyframes slideinLeft {
+    0% {
+        transform: skewX(-20deg) translateX(100vw);
+    }
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes slideoutLeft {
+    0% {
+        transform: skewX(-20deg)
+    }
+    100% {
+        transform: skewX(0deg) translateX(-100vw);
+    }
 }
