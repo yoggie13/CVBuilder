@@ -80,9 +80,9 @@ function getDate(datehtml) {
 }
 
 
-var counterL = 1;
-var counterS = 1;
-var counterH = 1;
+var counterL = 2;
+var counterS = 3;
+var counterH = 3;
 var counterJ = 1;
 var counterF = 1;
 
