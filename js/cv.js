@@ -2,15 +2,19 @@ window.onload = function fillCV() {
         $("#name").html(sessionStorage.getItem("name").toLocaleUpperCase());
 
         let email = sessionStorage.getItem("email");
-        $("#email").html(email);
-        $("#email").attr("href", "mailto:" + email);
+        if (email != null && email != "") {
+            $("#email").html(email);
+            $("#email").attr("href", "mailto:" + email);
+        } else {
+            $("#emailp").remove();
+        }
 
         let linkedin = sessionStorage.getItem("linkedin");
         if (linkedin != null && linkedin != "") {
             $("#linkedin").html(linkedin);
             $("#linkedin").attr("href", linkedin);
         } else {
-            $("#l").remove();
+            $("#linkedinp").remove();
         }
 
         let phone = sessionStorage.getItem("phone");

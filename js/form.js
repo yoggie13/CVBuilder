@@ -33,7 +33,8 @@ function makeCV() {
         } else {
             sessionStorage.setItem(`datum${i}`, getDate(document.getElementById(`date${i}1`).value) + " - " + getDate(document.getElementById(`date${i}2`).value));
         }
-        sessionStorage.setItem(`opis${i}`, document.getElementById(`opis${i}`).value);
+
+        sessionStorage.setItem(`opis${i}`, fixOpis(document.getElementById(`opis${i}`).value));
     }
 
     for (let i = 1; i < 15; i++) {
@@ -444,3 +445,7 @@ document.querySelector('#posaotrenutno1').addEventListener('change', function() 
         $(`#date12l`).css('display', 'flex');
     }
 });
+
+function fixOpis(opis) {
+    return opis.replaceAll("\n", "<br>");
+}
