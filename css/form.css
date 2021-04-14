@@ -157,15 +157,13 @@ button {
 
 #save_cv {
     width: 100%;
-    flex-direction: row;
-    justify-content: flex-start;
-    position: relative;
-    width: 100%;
+    margin-top: 20% !important;
 }
 
-#save_cv button {
-    width: 100px;
-    height: 100px;
+#save {
+    width: 150px;
+    height: 150px;
+    margin-left: 40%;
 }
 
 #facultyb,
@@ -182,6 +180,11 @@ button {
 #next_section {
     flex: 0 1 auto;
     margin-left: auto;
+}
+
+#previous_section {
+    flex: 0 1 auto;
+    margin-right: auto;
 }
 
 @keyframes slideinLeft {
@@ -217,5 +220,14 @@ button {
     }
     100% {
         transform: skewX(0deg) translateX(100vw);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #save_cv {
+        margin-top: 100% !important;
+    }
+    #save {
+        margin-left: 20%;
     }
 }

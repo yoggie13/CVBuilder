@@ -433,11 +433,7 @@ function nextSection() {
 
         sectionCounter++;
 
-        if (sectionCounter != sections.length - 1)
-            $(`#${sections[sectionCounter]}`).css("display", "block");
-        else
-            $(`#${sections[sectionCounter]}`).css("display", "flex");
-
+        $(`#${sections[sectionCounter]}`).css("display", "block");
         $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
         $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
         $(`#${sections[sectionCounter]}`).css("animation", "slideinLeft .2s ease-in");
