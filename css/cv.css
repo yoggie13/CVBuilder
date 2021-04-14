@@ -69,16 +69,24 @@ ul {
     background-color: #00224b;
 }
 
+#profile_image {
+    margin-left: 20px;
+}
+
 #header h1,
 #header p,
 #header a {
     color: white;
 }
 
+#header a {
+    text-decoration: underline;
+}
+
 #header h1 {
     font-size: 40px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 img {

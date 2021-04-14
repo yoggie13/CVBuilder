@@ -3,6 +3,7 @@ function makeCV() {
     sessionStorage.setItem("name", document.getElementById('nameform').value);
     sessionStorage.setItem("email", document.getElementById('emailform').value);
     sessionStorage.setItem("linkedin", document.getElementById('linkedInform').value);
+    sessionStorage.setItem("github", document.getElementById('githubform').value);
     sessionStorage.setItem("phone", document.getElementById('phoneform').value);
     sessionStorage.setItem("address", document.getElementById('addressform').value);
     sessionStorage.setItem("middle", document.getElementById('middleform').value);
@@ -451,19 +452,24 @@ function nextSection() {
 function previousSection() {
     event.preventDefault();
 
-    $(`#${sections[sectionCounter]}`).css("display", "none");
-    $(`#${sections[sectionCounter]}`).css("grid-column", "3");
-    $(`#${sections[sectionCounter]}`).css(`grid-row","${sectionCounter-1}`);
+    $(`#${sections[sectionCounter]}`).css("animation", "slideoutRight .2s ease-in");
 
+    setTimeout(function() {
 
-    sectionCounter--;
+        $(`#${sections[sectionCounter]}`).css("display", "none");
+        $(`#${sections[sectionCounter]}`).css("grid-column", "3");
+        $(`#${sections[sectionCounter]}`).css(`grid-row","${sectionCounter-1}`);
 
-    $(`#${sections[sectionCounter]}`).css("display", "block");
-    $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
-    $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
+        sectionCounter--;
 
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        $(`#${sections[sectionCounter]}`).css("display", "block");
+        $(`#${sections[sectionCounter]}`).css("grid-column", "2/2");
+        $(`#${sections[sectionCounter]}`).css("grid-row", "1/1");
+        $(`#${sections[sectionCounter]}`).css("animation", "slideinRight .2s ease-in");
+
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }, 100);
 }
 
 document.querySelector('#fakstrenutno1').addEventListener('change', function() {
@@ -491,3 +497,10 @@ document.querySelector('#posaotrenutno1').addEventListener('change', function() 
 function fixOpis(opis) {
     return opis.replaceAll("\n", "<br>");
 }
+window.addEventListener("keydown", function(event) {
+
+    if (event.key == "ArrowLeft")
+        previousSection();
+    else if (event.key == "ArrowRight")
+        nextSection();
+});

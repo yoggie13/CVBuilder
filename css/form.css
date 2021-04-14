@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-color: #FAFAFA;
+    background-color: #37c6ff;
     font-family: Lato;
 }
 
@@ -115,10 +115,11 @@ small {
 }
 
 #check input {
-    width: 10px;
+    width: 15px;
+    height: 15px;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 10px;
+    margin-left: 15px;
     margin-right: 0px;
 }
 
@@ -189,5 +190,23 @@ button {
     }
     100% {
         transform: skewX(0deg) translateX(-100vw);
+    }
+}
+
+@keyframes slideinRight {
+    0% {
+        transform: skewX(20deg) translateX(-100vw);
+    }
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes slideoutRight {
+    0% {
+        transform: skewX(20deg)
+    }
+    100% {
+        transform: skewX(0deg) translateX(100vw);
     }
 }

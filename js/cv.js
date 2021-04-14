@@ -17,6 +17,14 @@ window.onload = function fillCV() {
             $("#linkedinp").remove();
         }
 
+        let github = sessionStorage.getItem("github");
+        if (github != null && github != "") {
+            $("#github").html(github);
+            $("#github").attr("href", github);
+        } else {
+            $("#githubp").remove();
+        }
+
         let phone = sessionStorage.getItem("phone");
         if (phone != null && phone != "") {
             $("#phone").html("Telefon: " + phone);
