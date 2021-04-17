@@ -162,9 +162,9 @@ function downloadPDF(){
         }
     };
     
-    /*alert("Download će krenuti uskoro, nemoj refreshovati :)")
+    alert("Download će krenuti uskoro, nemoj refreshovati :)")
  
-    html2pdf().set(opt).from(element).save();*/
+    html2pdf().set(opt).from(element).save();
     
 }
 function fixOpis(i) {
