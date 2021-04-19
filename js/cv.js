@@ -68,7 +68,7 @@ window.onload = function fillCV() {
             </div>`;
 
             $(`#faculty${i}`).html(sessionStorage.getItem(`faculty${i}`));
-            if (sessionStorage.getIem(`datef${i}`) != null && sessionStorage.getItem(`datem`) != "" && sessionStorage.getItem("datem").includes("undefined")) {
+            if (sessionStorage.getItem(`datef${i}`) != null && sessionStorage.getItem(`datem`) != "" && sessionStorage.getItem("datem").includes("undefined")) {
                 $(`#foddo${i}`).html(sessionStorage.getItem(`datef${i}`))
             }
             $(`#course${i}`).html(sessionStorage.getItem(`course${i}`));
