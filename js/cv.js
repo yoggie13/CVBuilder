@@ -149,10 +149,12 @@ function downloadPDF(){
         margin: 0,
         filename: `${sessionStorage.getItem("name")} - CV.pdf`,
         image: {
-            type: 'png',
-            quality: 3
+            type: 'jpeg',
+            quality: 1
         },
         html2canvas: {
+            letterRendering: true,
+            dpi: 300,
             scale: 3
         },
         jsPDF: {
